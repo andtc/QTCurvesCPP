@@ -228,6 +228,7 @@ DIST          = ../../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf \
+		../QTCurvesCPP/.qmake.stash \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -431,6 +432,7 @@ Makefile: ../QTCurvesCPP/QTCurvesCPP.pro ../../../../Qt/5.11.1/gcc_64/mkspecs/li
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -624,6 +626,7 @@ Makefile: ../QTCurvesCPP/QTCurvesCPP.pro ../../../../Qt/5.11.1/gcc_64/mkspecs/li
 ../../../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -913,6 +916,7 @@ moc_renderarea.cpp: ../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		../../../../Qt/5.11.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/QColor \
 		../QTCurvesCPP/renderarea.h \
 		moc_predefs.h \
 		../../../../Qt/5.11.1/gcc_64/bin/moc
@@ -1030,7 +1034,8 @@ ui_mainwindow.h: ../QTCurvesCPP/mainwindow.ui \
 		../../../../Qt/5.11.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtGui/qvector2d.h \
-		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/QColor
 	/home/andres/Qt/5.11.1/gcc_64/bin/uic ../QTCurvesCPP/mainwindow.ui -o ui_mainwindow.h
 
 compiler_yacc_decl_make_all:
@@ -1266,7 +1271,30 @@ mainwindow.o: ../QTCurvesCPP/mainwindow.cpp ../QTCurvesCPP/mainwindow.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtCore/QVariant \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qapplication.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreapplication.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtCore/qeventloop.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qguiapplication.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qinputmethod.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QHBoxLayout \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayout.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qpushbutton.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QSpacerItem \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QStatusBar \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QVBoxLayout \
+		../../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
+		../QTCurvesCPP/renderarea.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../QTCurvesCPP/mainwindow.cpp
 
 renderarea.o: ../QTCurvesCPP/renderarea.cpp ../QTCurvesCPP/renderarea.h \
@@ -1372,7 +1400,13 @@ renderarea.o: ../QTCurvesCPP/renderarea.cpp ../QTCurvesCPP/renderarea.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.11.1/gcc_64/include/QtGui/qvector2d.h \
-		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/QColor \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/QPaintEvent \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o renderarea.o ../QTCurvesCPP/renderarea.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
