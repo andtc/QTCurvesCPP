@@ -13,10 +13,13 @@ public:
     QSize minimumSizeHint() const Q_DECL_OVERRIDE;
     QSize sizeHint() const Q_DECL_OVERRIDE;
 
-    enum Shapes {Asteroid,Cicloid,HuygenCicloid,HypoCicloid};
+    enum ShapeType {Asteroid,Cycloid,HuygensCycloid,HypoCycloid};
 
     void setBackgroundColor (QColor color) {mBackgroundColor=color;}
     QColor backgroundColor () const {return mBackgroundColor;}
+
+    void setShape (ShapeType shape) {mShape=shape;}
+    ShapeType shape () const {return mShape;}
 
 protected:
     void paintEvent(QPaintEvent *event) Q_DECL_OVERRIDE;
@@ -28,6 +31,7 @@ public slots:
 private:
     QColor mBackgroundColor;
     QColor mShapeColor;
+    ShapeType mShape;
 };
 
 #endif // RENDERAREA_H
