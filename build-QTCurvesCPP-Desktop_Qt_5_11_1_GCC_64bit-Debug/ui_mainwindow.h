@@ -11,12 +11,13 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QDoubleSpinBox>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QSpacerItem>
+#include <QtWidgets/QSpinBox>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include "renderarea.h"
 
@@ -26,74 +27,110 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QVBoxLayout *verticalLayout_2;
-    QHBoxLayout *horizontalLayout;
     RenderArea *renderArea;
-    QVBoxLayout *verticalLayout;
     QPushButton *btnAsteroid;
     QPushButton *btnCycloid;
     QPushButton *btnHuygens;
     QPushButton *btnHypo;
     QPushButton *btnLine;
-    QSpacerItem *verticalSpacer;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label;
+    QDoubleSpinBox *spinScale;
+    QWidget *widget1;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_2;
+    QDoubleSpinBox *spinInterval;
+    QWidget *widget2;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_3;
+    QSpinBox *spinCount;
     QStatusBar *statusBar;
 
     void setupUi(QMainWindow *MainWindow)
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(352, 235);
+        MainWindow->resize(360, 385);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        verticalLayout_2 = new QVBoxLayout(centralWidget);
-        verticalLayout_2->setSpacing(6);
-        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
-        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
-        horizontalLayout = new QHBoxLayout();
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
         renderArea = new RenderArea(centralWidget);
         renderArea->setObjectName(QStringLiteral("renderArea"));
-
-        horizontalLayout->addWidget(renderArea);
-
-        verticalLayout = new QVBoxLayout();
-        verticalLayout->setSpacing(6);
-        verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
+        renderArea->setGeometry(QRect(10, 10, 231, 201));
         btnAsteroid = new QPushButton(centralWidget);
         btnAsteroid->setObjectName(QStringLiteral("btnAsteroid"));
-
-        verticalLayout->addWidget(btnAsteroid);
-
+        btnAsteroid->setGeometry(QRect(261, 11, 80, 25));
         btnCycloid = new QPushButton(centralWidget);
         btnCycloid->setObjectName(QStringLiteral("btnCycloid"));
-
-        verticalLayout->addWidget(btnCycloid);
-
+        btnCycloid->setGeometry(QRect(261, 42, 80, 25));
         btnHuygens = new QPushButton(centralWidget);
         btnHuygens->setObjectName(QStringLiteral("btnHuygens"));
-
-        verticalLayout->addWidget(btnHuygens);
-
+        btnHuygens->setGeometry(QRect(261, 73, 80, 25));
         btnHypo = new QPushButton(centralWidget);
         btnHypo->setObjectName(QStringLiteral("btnHypo"));
-
-        verticalLayout->addWidget(btnHypo);
-
+        btnHypo->setGeometry(QRect(261, 104, 97, 25));
         btnLine = new QPushButton(centralWidget);
         btnLine->setObjectName(QStringLiteral("btnLine"));
+        btnLine->setGeometry(QRect(261, 135, 80, 25));
+        widget = new QWidget(centralWidget);
+        widget->setObjectName(QStringLiteral("widget"));
+        widget->setGeometry(QRect(270, 170, 116, 28));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label = new QLabel(widget);
+        label->setObjectName(QStringLiteral("label"));
 
-        verticalLayout->addWidget(btnLine);
+        horizontalLayout->addWidget(label);
 
-        verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
+        spinScale = new QDoubleSpinBox(widget);
+        spinScale->setObjectName(QStringLiteral("spinScale"));
+        spinScale->setDecimals(1);
+        spinScale->setSingleStep(0.1);
 
-        verticalLayout->addItem(verticalSpacer);
+        horizontalLayout->addWidget(spinScale);
 
+        widget1 = new QWidget(centralWidget);
+        widget1->setObjectName(QStringLiteral("widget1"));
+        widget1->setGeometry(QRect(176, 220, 189, 28));
+        horizontalLayout_2 = new QHBoxLayout(widget1);
+        horizontalLayout_2->setSpacing(6);
+        horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_2->setObjectName(QStringLiteral("horizontalLayout_2"));
+        horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
+        label_2 = new QLabel(widget1);
+        label_2->setObjectName(QStringLiteral("label_2"));
 
-        horizontalLayout->addLayout(verticalLayout);
+        horizontalLayout_2->addWidget(label_2);
 
+        spinInterval = new QDoubleSpinBox(widget1);
+        spinInterval->setObjectName(QStringLiteral("spinInterval"));
+        spinInterval->setMaximum(100);
+        spinInterval->setSingleStep(0.1);
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        horizontalLayout_2->addWidget(spinInterval);
+
+        widget2 = new QWidget(centralWidget);
+        widget2->setObjectName(QStringLiteral("widget2"));
+        widget2->setGeometry(QRect(220, 290, 141, 28));
+        horizontalLayout_3 = new QHBoxLayout(widget2);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QStringLiteral("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_3 = new QLabel(widget2);
+        label_3->setObjectName(QStringLiteral("label_3"));
+
+        horizontalLayout_3->addWidget(label_3);
+
+        spinCount = new QSpinBox(widget2);
+        spinCount->setObjectName(QStringLiteral("spinCount"));
+        spinCount->setMaximum(512);
+        spinCount->setSingleStep(8);
+
+        horizontalLayout_3->addWidget(spinCount);
 
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
@@ -113,6 +150,9 @@ public:
         btnHuygens->setText(QApplication::translate("MainWindow", "Huygens", nullptr));
         btnHypo->setText(QApplication::translate("MainWindow", "Hypo Cycloid", nullptr));
         btnLine->setText(QApplication::translate("MainWindow", "Line", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Scale:", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "Interval Length", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Step Count", nullptr));
     } // retranslateUi
 
 };
