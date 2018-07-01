@@ -34,6 +34,7 @@ public:
     QPushButton *btnCycloid;
     QPushButton *btnHuygens;
     QPushButton *btnHypo;
+    QPushButton *btnLine;
     QSpacerItem *verticalSpacer;
     QStatusBar *statusBar;
 
@@ -79,6 +80,11 @@ public:
 
         verticalLayout->addWidget(btnHypo);
 
+        btnLine = new QPushButton(centralWidget);
+        btnLine->setObjectName(QStringLiteral("btnLine"));
+
+        verticalLayout->addWidget(btnLine);
+
         verticalSpacer = new QSpacerItem(20, 40, QSizePolicy::Minimum, QSizePolicy::Expanding);
 
         verticalLayout->addItem(verticalSpacer);
@@ -106,6 +112,7 @@ public:
         btnCycloid->setText(QApplication::translate("MainWindow", "Cycloid", nullptr));
         btnHuygens->setText(QApplication::translate("MainWindow", "Huygens", nullptr));
         btnHypo->setText(QApplication::translate("MainWindow", "Hypo Cycloid", nullptr));
+        btnLine->setText(QApplication::translate("MainWindow", "Line", nullptr));
     } // retranslateUi
 
 };
