@@ -26,7 +26,7 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralWidget;
-    QWidget *layoutWidget;
+    QVBoxLayout *verticalLayout_2;
     QHBoxLayout *horizontalLayout;
     RenderArea *renderArea;
     QVBoxLayout *verticalLayout;
@@ -44,15 +44,14 @@ public:
         MainWindow->resize(352, 235);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        layoutWidget = new QWidget(centralWidget);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(11, 11, 281, 168));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
+        verticalLayout_2 = new QVBoxLayout(centralWidget);
+        verticalLayout_2->setSpacing(6);
+        verticalLayout_2->setContentsMargins(11, 11, 11, 11);
+        verticalLayout_2->setObjectName(QStringLiteral("verticalLayout_2"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        renderArea = new RenderArea(layoutWidget);
+        renderArea = new RenderArea(centralWidget);
         renderArea->setObjectName(QStringLiteral("renderArea"));
 
         horizontalLayout->addWidget(renderArea);
@@ -60,22 +59,22 @@ public:
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        btnAsteroid = new QPushButton(layoutWidget);
+        btnAsteroid = new QPushButton(centralWidget);
         btnAsteroid->setObjectName(QStringLiteral("btnAsteroid"));
 
         verticalLayout->addWidget(btnAsteroid);
 
-        btnCycloid = new QPushButton(layoutWidget);
+        btnCycloid = new QPushButton(centralWidget);
         btnCycloid->setObjectName(QStringLiteral("btnCycloid"));
 
         verticalLayout->addWidget(btnCycloid);
 
-        btnHuygens = new QPushButton(layoutWidget);
+        btnHuygens = new QPushButton(centralWidget);
         btnHuygens->setObjectName(QStringLiteral("btnHuygens"));
 
         verticalLayout->addWidget(btnHuygens);
 
-        btnHypo = new QPushButton(layoutWidget);
+        btnHypo = new QPushButton(centralWidget);
         btnHypo->setObjectName(QStringLiteral("btnHypo"));
 
         verticalLayout->addWidget(btnHypo);
@@ -86,6 +85,9 @@ public:
 
 
         horizontalLayout->addLayout(verticalLayout);
+
+
+        verticalLayout_2->addLayout(horizontalLayout);
 
         MainWindow->setCentralWidget(centralWidget);
         statusBar = new QStatusBar(MainWindow);
